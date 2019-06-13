@@ -1,5 +1,4 @@
 description: Check functionality of systemd-tmpfiles utility
 tags: [sanity, systemd-tmpfiles]
 tier: 1
-relevancy: |
-    distro > rhel-6: True
+distros: [rhel-7, rhel-8]

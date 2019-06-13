@@ -1,5 +1,4 @@
 description: Check & verify cgroups settings/configuration
 tags: [sanity, cgroups]
 tier: 1
-relevancy: |
-    distro > rhel-6: True
+distros: [rhel-7, rhel-8]
