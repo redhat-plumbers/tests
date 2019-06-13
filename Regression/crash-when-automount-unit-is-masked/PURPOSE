@@ -1,0 +1,3 @@
+PURPOSE of /CoreOS/systemd/Regression/crash-when-automount-unit-is-masked
+Description: automount: if an automount unit is masked, don't react to activation anymore
+Author: Frantisek Sumsal <fsumsal@redhat.com>
