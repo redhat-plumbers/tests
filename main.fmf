@@ -1,2 +1,3 @@
 contact: Frantisek Sumsal <fsumsal@redhat.com>
 component: systemd
+distros: [rhel-6, rhel-7, rhel-8]
