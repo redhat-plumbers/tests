@@ -1,3 +1,4 @@
-description: Don't react to an automount unit activation if it's masked
+summary: Don't react to an automount unit activation if it's masked
 tags: [regression, systemctl]
 tier: 2
+duration: 5m

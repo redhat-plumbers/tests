@@ -1,4 +1,10 @@
-description: Check functionality of systemd-tmpfiles utility
+summary: Check functionality of systemd-tmpfiles utility
+description: |
+    In addition to basic functionality, test covers also several bugs.
+    * BZ#1365870 - does not set owner/group defined by z-directive
+    * BZ#1436004 - unexpected, catastrophic behavior from systemd-tmpfiles
+    * BZ#1296288 - don't follow symlinks when adjusting ACLs, file attributes...
 tags: [sanity, systemd-tmpfiles]
 tier: 1
 distros: [rhel-7, rhel-8]
+duration: 5m

@@ -1,3 +1,0 @@
-PURPOSE of /CoreOS/systemd/Sanity/cgroups
-Description: Check functionality of various cgroup-related settings/utils
-Author: Frantisek Sumsal <fsumsal@redhat.com>
