@@ -229,7 +229,7 @@ fi
         rlRun "popd"
         rlRun "userdel -r foo"
         rlRun "groupdel bar" 0,8
-        rlRun "rm -r $TmpDir /etc/tmpfiles.d/hello*.conf" 0 "Removing tmp directory"
+        rlRun "rm -fr $TmpDir /etc/tmpfiles.d/hello*.conf" 0 "Removing tmp directory"
     rlPhaseEnd
 rlJournalPrintText
 rlJournalEnd
