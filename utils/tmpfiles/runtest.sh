@@ -43,6 +43,7 @@ rlJournalStart
         rlRun "groupadd bar" 0,9
     rlPhaseEnd
 
+if rlIsRHEL; then
     rlPhaseStartTest "bug 1365870"
 
 cat <<\EOF > /etc/tmpfiles.d/hello.conf
@@ -73,6 +74,7 @@ EOF
         rlAssertGrep "root.*root.* hello2.test$" $rlRun_LOG
         rlAssertGrep "foo.*bar.* hello2.link -> /run/hello2/hello2.test$" $rlRun_LOG
     rlPhaseEnd
+fi
 
     rlPhaseStartTest "RFE: option 'e' [BZ#1225739]"
         TMPFILES_CONF="$(mktemp /etc/tmpfiles.d/dir-age-XXX.conf)"
@@ -227,7 +229,7 @@ EOF
         rlRun "popd"
         rlRun "userdel -r foo"
         rlRun "groupdel bar" 0,8
-        rlRun "rm -r $TmpDir /etc/tmpfiles.d/hello*.conf" 0 "Removing tmp directory"
+        rlRun "rm -fr $TmpDir /etc/tmpfiles.d/hello*.conf" 0 "Removing tmp directory"
     rlPhaseEnd
 rlJournalPrintText
 rlJournalEnd

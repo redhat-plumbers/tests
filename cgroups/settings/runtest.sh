@@ -38,6 +38,7 @@ rlJournalStart
         rlRun "pushd $TmpDir"
     rlPhaseEnd
 
+if rlIsRHEL 7 || rlIsRHEL "<=8.1"; then
     rlPhaseStartTest "Ensure we use the legacy cgroup hierarchy"
         # If this returns "cgroups2fs" we're in full cgroupsv2 mode,
         # otherwise it should return tmpfs (for hybrid and legacy modes)
@@ -46,6 +47,7 @@ rlJournalStart
         # we're in legacy mode
         rlRun "[[ ! -e /sys/fs/cgroup/unified ]]"
     rlPhaseEnd
+fi
 
     rlPhaseStartTest "_CGROUP_CONTROLLER_MASK_ALL does not cover CGROUP_PIDS [BZ#1532586]"
         UNIT_PATH="$(mktemp /etc/systemd/system/cgroupsXXX.service)"
